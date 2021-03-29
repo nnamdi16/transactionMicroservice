@@ -1,39 +1,51 @@
 package com.nnamdi.transaction.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "transaction")
 public class Transaction {
     private @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+            @Column(name = "transaction_id")
     Long transactionId;
-    private String transactionType;
+
+    @Column(name = "transaction_type")
+    private int transactionType;
+
+    @Column(name = "amount")
     private Double amount;
+
+    @Column(name = "transaction_description")
     private String transactionDescription;
+
+    @Column(name = "account_id")
     private Long accountId;
 
-    public Transaction( String transactionType, Double amount, String transactionDescription, Long accountId) {
+    @Column(name = "date")
+    private Date date;
+
+    public Transaction(int transactionType, Double amount, String transactionDescription, Long accountId, Date date) {
         this.transactionType = transactionType;
         this.amount = amount;
         this.transactionDescription = transactionDescription;
         this.accountId = accountId;
+        this.date = date;
     }
 
     public Transaction() {
 
     }
 
-    public String getTransactionType() {
+
+    public int getTransactionType() {
         return transactionType;
     }
 
-    public void setTransactionType(String transactionType) {
+    public void setTransactionType(int transactionType) {
         this.transactionType = transactionType;
     }
-
 
     public Double getAmount() {
         return amount;
@@ -93,5 +105,13 @@ public class Transaction {
 
         Transaction transaction = (Transaction)obj;
         return Objects.equals(this.transactionId,transaction.transactionId) && Objects.equals(this.accountId,transaction.accountId);
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
