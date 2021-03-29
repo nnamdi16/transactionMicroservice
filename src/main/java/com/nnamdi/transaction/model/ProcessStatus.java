@@ -3,7 +3,7 @@ package com.nnamdi.transaction.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "processStatus")
+//@Table(name = "processStatus")
 public class ProcessStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
