@@ -1,12 +1,13 @@
-CREATE DATABASE transaction_microservice;
-USE AccountMicroservice;
-DROP TABLE IF EXISTS transaction;
+# CREATE DATABASE transaction_microservice;
+# USE AccountMicroservice;
+# DROP TABLE IF EXISTS transaction;
 CREATE TABLE IF NOT EXISTS transaction  (
     transaction_id INT PRIMARY KEY AUTO_INCREMENT,
-    transaction_type VARCHAR(500) NOT NULL,
+    transaction_type INT NOT NULL,
     amount decimal(10,2) ,
     transaction_description nvarchar(512) NOT NULL,
-    account_id INT NOT NULL
+    account_id INT NOT NULL,
+    date DATETIME
 
 
     );
@@ -24,7 +25,7 @@ ADD COLUMN date DATETIME;
 
 ALTER TABLE transaction modify transaction_type INT;
 
-INSERT INTO financial_account( total_balance, account_id) VALUES (1000.00,12345);
+INSERT INTO financial_account( total_balance, account_id) VALUES (0.00,1);
 
 # DROP TABLE IF EXISTS user_role;
 # CREATE TABLE IF NOT EXISTS UserRole (
