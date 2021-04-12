@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class FinancialAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "financial_id")
+    @Column(name = "financial_account_id")
     private Long financialAccountId;
 
     @Column(name = "total_balance")
