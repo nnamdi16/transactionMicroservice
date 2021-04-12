@@ -1,4 +1,4 @@
-package com.nnamdi.transaction.util;
+package com.nnamdi.transaction.payload.response;
 
 import java.util.HashMap;
 
@@ -10,7 +10,6 @@ public interface StandardJsonResponse {
     String RESOURCE_NOT_FOUND_MSG = "The resource requested is not found. Please check your resource ID.";
 
     void setSuccess(boolean success, String title, String msg);
-
     /**
      * @return the success
      */

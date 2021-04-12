@@ -1,4 +1,5 @@
-package com.nnamdi.transaction.util;
+package com.nnamdi.transaction.payload.response;
+
 
 import java.util.HashMap;
 
